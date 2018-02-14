@@ -1,0 +1,49 @@
+UFO Welcome Center
+
+https://www.roadsideamerica.com/story/10911
+
+This attraction is designed for aliens by humans. 
+It is shaped like a flying saucer with a smaller flying saucer on top.
+It is falling apart but it's caretaker is committed to keeping it open.
+It welcomes visiters from all corners of the universe (including humans).
+The point of this place is to create an environment that aliens would feel comfortable in,
+not so much for humans. It's covered in wires and gadgets from ceiling to floor. 
+
+
+About me
+
+I am a Computer Science major with a concentration in Human Centered Computing. I'm a third year student at CSU currently
+taking Web Development and Human Computer Interaction. I am also taking several psychology classes this semester and 
+participating in research. I'm also working 20 hours a week as a supervisor, so I'm very busy all the time. That being said
+I want to do professional web development work in the 
+future so I am eager to learn everything I can as fast as I can manage. I have never been to South Carolina and I do not plan to go
+but I think there are plenty of spots for others to consider. 
+
+CSS
+header{
+	color: #EBF4F7;
+	background-color: #1A2A40;
+	border: 3px;
+	text-align: left;
+}
+body{
+	color: #F2A30F;
+	background-color: #EBF4F7;
+}
+.footer{
+	float: bottom;
+}
+nav.navigation{
+	text-align: right;
+	border: 3px #2474A6;
+	background-color: #1A2A40;
+	color: #EBF4F7;
+}
+a:link,a:hover{
+	color: #E00B27
+}
+img{
+	border: #2474A6
+}
+
+http://cs.colostate.edu/~aaronper/mvc.txt
