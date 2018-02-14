@@ -1,0 +1,25 @@
+header{
+	color: #EBF4F7;
+	background-color: #1A2A40;
+	border: 3px;
+	text-align: left;
+}
+body{
+	color: #F2A30F;
+	background-color: #EBF4F7;
+}
+.footer{
+	float: bottom;
+}
+nav.navigation{
+	text-align: right;
+	border: 3px #2474A6;
+	background-color: #1A2A40;
+	color: #EBF4F7;
+}
+a:link,a:hover{
+	color: #E00B27
+}
+img{
+	border: #2474A6
+}
