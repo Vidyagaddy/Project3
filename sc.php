@@ -21,7 +21,7 @@ class Controller_SC extends Controller
 
 		$scs = SC::getAll();
 
-		$content->set_safe('scs', $scs);
+		$content->set_safe('sc', $sc);
 
 		$layout->content = Response::forge($content);
 
