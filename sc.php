@@ -27,6 +27,69 @@ class Controller_SC extends Controller
 
 		return $layout;
 	}
+	
+	public function action_beach()
+        {
+                $layout = View::forge('sc/layoutfull');
+
+                $content = View::forge('sc/beach');
+
+                $scs = SC::getAll();
+
+                $content->set_safe('scs', $scs);
+
+                $layout->content = Response::forge($content);
+
+                return $layout;
+        }
+
+        public function action_island()
+        {
+                $layout = View::forge('sc/layoutfull');
+
+                $content = View::forge('sc/island');
+
+                $scs = SC::getAll();
+
+                $content->set_safe('scs', $scs);
+
+                $layout->content = Response::forge($content);
+
+                return $layout;
+        }
+
+
+        public function action_ufo()
+        {
+                $layout = View::forge('sc/layoutfull');
+
+                $content = View::forge('sc/ufo');
+
+                $scs = SC::getAll();
+
+                $content->set_safe('scs', $scs);
+
+                $layout->content = Response::forge($content);
+
+                return $layout;
+        }
+
+
+        public function action_about()
+        {
+                $layout = View::forge('sc/layoutfull');
+
+                $content = View::forge('sc/about');
+
+                $scs = SC::getAll();
+
+                $content->set_safe('scs', $scs);
+
+                $layout->content = Response::forge($content);
+
+                return $layout;
+        }
+
 
 	//View a specific demo item
 	public function action_view($id)
