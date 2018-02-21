@@ -108,7 +108,7 @@ class Controller_SC extends Controller
 	}
 
 	//
-	public function get_addEdit($id = null)
+/*	public function get_addEdit($id = null)
 	{
 		$layout = View::forge('sc/layoutfull');
 
@@ -137,7 +137,7 @@ class Controller_SC extends Controller
 		$sc = new SC($id);
 		$sc->delete();
 		Response::redirect('index.php/sc/index');
-	}
+	} */
 
 	public function action_404()
 	{
