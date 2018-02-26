@@ -1,19 +1,26 @@
 #header{
         color: #EBF4F7;
         background-color: #1A2A40;
-        border: 8px;
+        
+        width: 100%;
+        overflow: hidden;
         text-align: left;
         height: 100%;
         font-size: 20px;
-		padding: 5px;
 		letter-spacing: 27px;
+        position: sticky;
+        top: 0px;
+        padding-right: 200px;
+       
 }
 body{
         color: #F2A30F;
         background-color: #EBF4F7;
-        margin: 0px;
+        margin-right: 15%;
         margin-top: 0px;
+        margin-left: 0px;
 		float: left;
+        position: relative;
 }
 .footer{
         float: bottom;
@@ -30,6 +37,7 @@ nav.navigation{
         position: fixed;
         width: 15%;
         
+        
 }
 
 nav.navigation ul{
@@ -41,7 +49,11 @@ nav.navigation a{
 }
 
 img{
-        border: #2474A6
+        border: #2474A6;
+        float: right;
+        width: 100px;
+        padding-right: 20px;
+        
 }
 #footer{
 	float: bottom;
