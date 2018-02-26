@@ -3,32 +3,46 @@
         background-color: #1A2A40;
         border: 8px;
         text-align: left;
+        height: 100%;
+        font-size: 20px;
+		padding: 5px;
+		letter-spacing: 27px;
 }
 body{
         color: #F2A30F;
         background-color: #EBF4F7;
+        margin: 0px;
+        margin-top: 0px;
+		float: left;
 }
 .footer{
         float: bottom;
 }
 nav.navigation{
+        
+        font-size: 20px;
         text-align: center;
-        border: 3px #2474A6;
         background-color: #1A2A40;
         color: #EBF4F7;
         height: 100%;
         right: 0;
-        top: 0;
+		top: 0;
         position: fixed;
         width: 15%;
+        
 }
 
 nav.navigation ul{
         list-style: none;
 }
-a:link,a:hover{
-        color: #E00B27
+nav.navigation a{
+	color: #EBF4F7;
+	
 }
+
 img{
         border: #2474A6
+}
+#footer{
+	float: bottom;
 }
