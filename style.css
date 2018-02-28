@@ -1,6 +1,6 @@
 #header{
-        color: #EBF4F7;
-        background-color: #1A2A40;
+        color: #1A2A40;
+        background-color: #EBF4F7;
         
         width: 100%;
         overflow: hidden;
@@ -8,53 +8,54 @@
         height: 100%;
         font-size: 20px;
 		letter-spacing: 27px;
-        position: sticky;
         top: 0px;
-        padding-right: 200px;
+		position: sticky;
+        padding-right: 100%;
+		padding-left:10%;
        
 }
+#logo{
+	float: right;
+}
+
+.sidebar{
+	
+	font-size: 15px;
+	text-align: center;
+	background-color: #EBF4F7;
+	color: #EBF4F7;
+	height: 100%;
+	right: 0;
+	top: 0;
+	position: fixed;
+	width: 15%;
+	
+	
+}
+
+.sidebar ul{
+	list-style: none;
+}
+.sidebar a{
+	color: #1A2A40;
+	
+}
 body{
+	font-size: 25px;
         color: #F2A30F;
-        background-color: #EBF4F7;
-        margin-right: 15%;
+        background-color: #1A2A40;
+        margin-right: 25%;
         margin-top: 0px;
         margin-left: 0px;
 		float: left;
         position: relative;
 }
-.footer{
-        float: bottom;
-}
-nav.navigation{
-        
-        font-size: 20px;
-        text-align: center;
-        background-color: #1A2A40;
-        color: #EBF4F7;
-        height: 100%;
-        right: 0;
-		top: 0;
-        position: fixed;
-        width: 15%;
-        
-        
-}
 
-nav.navigation ul{
-        list-style: none;
-}
-nav.navigation a{
-	color: #EBF4F7;
-	
-}
 
-img{
-        border: #2474A6;
-        float: right;
-        width: 100px;
-        padding-right: 20px;
-        
-}
 #footer{
-	float: bottom;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
