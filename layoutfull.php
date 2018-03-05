@@ -8,7 +8,7 @@
         </head>
         <div class="sidebar">
                 <h1>
-                        <ul><br><br>
+                        <ul><br><br><br>
                                 <li><a href="<?=Uri::create('index.php/sc/index'); ?>">Home</a></li>
 
                                 <br>
@@ -19,6 +19,9 @@
 
                                 <br>
                                 <li><a href="<?=Uri::create('index.php/sc/island'); ?>">Hilton Head Island</a></li>
+                                
+                                <br>
+                                <li><a href="<?=Uri::create('index.php/sc/login'); ?>">Login</a></li>
 
                                 <br>
                                 <li><a href="<?=Uri::create('index.php/sc/about'); ?>">About Us</a></li>

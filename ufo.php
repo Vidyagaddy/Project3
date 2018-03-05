@@ -11,3 +11,32 @@ not so much for humans. It's covered in wires and gadgets from ceiling to floor.
 	<br>
 <a href="https://www.roadsideamerica.com/story/10911"> Source </a>
 </div>
+<div class = "comments">
+<?php
+if(session_start()){
+	if (isset($_POST['op'])) {
+		$content  = $_POST['content'];
+		$name  = $_POST['name'];
+			echo "<h2 align=\"center\">Your Comment Has Been Posted</h2>\n";
+			
+			echo "<blockquote> \n $name : $content \n </blockquote>\n";
+		
+	
+	}
+	else {
+	?>
+        <h2 align="center">We'd Love to Hear From You</h2>
+        <p>Enter your comment below </p>
+        <form method="post" action="ufo.php">
+        Name    <input type="text" name="name"    size="30"><br/>
+        <textarea name="content" rows="5" cols="40"></textarea><br/>
+        <input type="hidden" value="done" name="op">
+        <input type="submit" value="Send">
+        </form>
+<?php
+	}
+	}
+	?>
+
+<br /><br />
+</div>
