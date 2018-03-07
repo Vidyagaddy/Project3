@@ -11,16 +11,16 @@
         top: 0px;
 		position: sticky;
         padding-right: 100%;
-		padding-left:10%;
-       
+		padding-left:10%;       
 }
+
 #logo{
 	float: right;
 }
 
 .sidebar{
 	
-	font-size: 15px;
+	font-size: 10px;
 	text-align: center;
 	background-color: #EBF4F7;
 	color: #EBF4F7;
@@ -28,9 +28,7 @@
 	right: 0;
 	top: 0;
 	position: fixed;
-	width: 15%;
-	
-	
+	width: 15%;	
 }
 
 .sidebar ul{
