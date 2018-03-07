@@ -1,3 +1,4 @@
+
 #header{
         color: #1A2A40;
         background-color: #EBF4F7;
@@ -10,7 +11,7 @@
 		letter-spacing: 27px;
         top: 0px;
 		position: sticky;
-        padding-right: 100%;
+        padding-right: 200%;
 		padding-left:10%;       
 }
 
@@ -59,4 +60,8 @@ body{
     bottom: 0;
     width: 100%;
     text-align: center;
+    background-color: #EBF4F7;
+    padding-top: 2px;
+    border-width: thin;
+    color: #1A2A40;
 }
