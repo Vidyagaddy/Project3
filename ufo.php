@@ -13,7 +13,6 @@ not so much for humans. It's covered in wires and gadgets from ceiling to floor.
 </div>
 <div class = "comments">
 <?php
-if(session_start()){
 	if (isset($_POST['op'])) {
 		$content  = $_POST['content'];
 		$name  = $_POST['name'];
@@ -22,6 +21,9 @@ if(session_start()){
 			echo "<blockquote> \n $name : $content \n </blockquote>\n";
 		
 	
+	}
+	else if(!isset($username)){
+		//do nothing
 	}
 	else {
 	?>
@@ -34,7 +36,6 @@ if(session_start()){
         <input type="submit" value="Send">
         </form>
 <?php
-	}
 	}
 	?>
 
