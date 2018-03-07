@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+//	session_start();
+?>
 <html>
         <head>
                 <meta charset="utf-8">
@@ -40,12 +43,12 @@
                 <!--$content is called by the controller located in fuel/app/classes/controller-->
 
                 <div id="body">
-
                         <?=$content; ?>
                 </div>
                <br>
                 <div id="footer">
-                        This site is part of a <a href="https://www.cs.colostate.edu/~ct310/">CT310</a> Course Project
+                        This site is part of a <a href="https://www.cs.colostate.edu/~ct310/">CT310</a> Course Project <a href="<?=Uri::create('index.php/sc/logout'); ?>">Logout</a></li>
+			
                 </div>
         </body>
 </html>
