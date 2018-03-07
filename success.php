@@ -2,7 +2,8 @@
 <body>
 
 <p>Successfully Logged in!</p>
-<a href="printUserDetails">Print the current user details</a>
-
+<?php
+        Response::redirect('http://cs.colostate.edu/~jtperea/ct310/', 'refresh');
+?>
 </body>
 </html>
