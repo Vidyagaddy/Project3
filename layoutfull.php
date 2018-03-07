@@ -11,7 +11,7 @@
         </head>
         <div class="sidebar">
                 <h1>
-                        <ul><br><br><br>
+                        <ul><br><br><br><br>
                                 <li><a href="<?=Uri::create('index.php/sc/index'); ?>">Home</a></li>
 
                                 <br>

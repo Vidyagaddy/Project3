@@ -11,6 +11,17 @@ not so much for humans. It's covered in wires and gadgets from ceiling to floor.
 	<br>
 <a href="https://www.roadsideamerica.com/story/10911"> Source </a>
 </div>
+<br>
+<div class="UFOimages">
+
+         <?php echo Asset::img("UFOoutside.jpg",array("width" => "200px"));?>
+
+         <span style ="margin-left: 100px">
+         
+<?php echo Asset::img("UFOinside.jpg",array("width" => "200px"));?>
+         </span>
+         <br>
+<a href="https://www.roadsideamerica.com/story/10911"> Source of Images </a>
 <div class = "comments">
 <?php
 	$errors = ""; 
@@ -25,7 +36,6 @@ not so much for humans. It's covered in wires and gadgets from ceiling to floor.
 			$errors .= 'Please enter your name.<br/>';
 		}
 	
-
 		if($_POST['content'] != ""){
 			$content = filter_var($_POST['content'], FILTER_SANITIZE_STRING);
 			if($_POST['name'] == ""){
@@ -36,7 +46,6 @@ not so much for humans. It's covered in wires and gadgets from ceiling to floor.
 			$errors .= 'Please enter your content.<br/>';
 		}
 		
-
 		if(!$errors) {
 			echo "<h2 align=\"center\">Your Comment Has Been Posted</h2>\n";
                         

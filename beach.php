@@ -1,3 +1,4 @@
+
 <div class="body">
 <h1>Myrtle Beach</h1>
 <p>What better way to spend your time than to go out to the beach? Myrtle Beach has a lot to offer between its vast size (Over 60 miles of beach!) and its many attractions! In fact, there’s something for everyone! Check out some of the activities below:</p>
@@ -41,6 +42,10 @@ Murrells Inlet MarshWalk</p>
 <br>
 <br>
 </div>
+
+<?php echo Asset::img("myrtle_beach2.webp", array("width" => "500px"));?>
+<br>
+<a href="https://www.myrtlebeach.com/"> Image Source </a>
 <div class = "comments">
 <?php
         $errors = "";
@@ -54,8 +59,6 @@ Murrells Inlet MarshWalk</p>
                 else {
                         $errors .= 'Please enter your name.<br/>';
                 }
-
-
                 if($_POST['content'] != ""){
                         $content = filter_var($_POST['content'], FILTER_SANITIZE_STRING);
                         if($_POST['name'] == ""){
@@ -65,18 +68,13 @@ Murrells Inlet MarshWalk</p>
                 else {
                         $errors .= 'Please enter your content.<br/>';
                 }
-
-
                 if(!$errors) {
                         echo "<h2 align=\"center\">Your Comment Has Been Posted</h2>\n";
-
                         echo "<blockquote> \n $name : $content \n </blockquote>\n";
                 } else {
                         echo '<div style="color: red">' . $errors . '<br/></div>';
                 }
-
         }
-
         else if(!isset($username)){
                 //do nothing
         }
