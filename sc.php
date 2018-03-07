@@ -16,16 +16,40 @@ class Controller_SC extends Controller
 
 		$content = View::forge('sc/index');
 
+
+		// TRY
+		$session = Session::instance();
+
+                $username = $session->get('username');
+
+                $id = $session->get('userid');
+
 		$scs = SC::getAll();
 
 		$content->set_safe('scs', $scs);
+
+                if(isset($username) && isset($id))
+                {
+
+                        $content->set_safe('username',$username);
+
+                        $content->set_safe('id',$id);
+
+			$layout->content = Response::forge($content);
+
+                        return $layout;
+
+                }
+
+		//END TRY
 
 		$layout->content = Response::forge($content);
 
 		return $layout;
 	}
+
 //		BEACH ATTRACTION	//
-	public function action_beach()
+/*	public function action_beach()
         {
                 $layout = View::forge('sc/layoutfull');
 
@@ -38,9 +62,47 @@ class Controller_SC extends Controller
                 $layout->content = Response::forge($content);
 
                 return $layout;
+        }*/
+
+                public function action_beach()
+        {
+                $layout = View::forge('sc/layoutfull');
+
+                $content = View::forge('sc/beach');
+
+
+                // TRY
+                $session = Session::instance();
+
+                $username = $session->get('username');
+
+                $id = $session->get('userid');
+
+                $scs = SC::getAll();
+
+                $content->set_safe('scs', $scs);
+
+                if(isset($username) && isset($id))
+                {
+
+                        $content->set_safe('username',$username);
+
+                        $content->set_safe('id',$id);
+
+                        $layout->content = Response::forge($content);
+
+                        return $layout;
+
+                }
+
+                //END TRY
+
+                $layout->content = Response::forge($content);
+
+                return $layout;
         }
 //		ISLAND ATTRACTION	//
-	public function action_island()
+/*	public function action_island()
         {
                 $layout = View::forge('sc/layoutfull');
 
@@ -53,10 +115,48 @@ class Controller_SC extends Controller
                 $layout->content = Response::forge($content);
 
                 return $layout;
+        } */
+
+                public function action_island()
+        {
+                $layout = View::forge('sc/layoutfull');
+
+                $content = View::forge('sc/island');
+
+
+                // TRY
+                $session = Session::instance();
+
+                $username = $session->get('username');
+
+                $id = $session->get('userid');
+
+                $scs = SC::getAll();
+
+                $content->set_safe('scs', $scs);
+
+                if(isset($username) && isset($id))
+                {
+
+                        $content->set_safe('username',$username);
+
+                        $content->set_safe('id',$id);
+
+                        $layout->content = Response::forge($content);
+
+                        return $layout;
+
+                }
+
+                //END TRY
+
+                $layout->content = Response::forge($content);
+
+                return $layout;
         }
 
 //		UFO ATTRACTION		//
-	public function action_ufo()
+/*	public function action_ufo()
         {
                 $layout = View::forge('sc/layoutfull');
 
@@ -69,10 +169,48 @@ class Controller_SC extends Controller
                 $layout->content = Response::forge($content);
 
                 return $layout;
+        }*/
+
+	        public function action_ufo()
+        {
+                $layout = View::forge('sc/layoutfull');
+
+                $content = View::forge('sc/ufo');
+
+
+                // TRY
+                $session = Session::instance();
+
+                $username = $session->get('username');
+
+                $id = $session->get('userid');
+
+                $scs = SC::getAll();
+
+                $content->set_safe('scs', $scs);
+
+                if(isset($username) && isset($id))
+                {
+
+                        $content->set_safe('username',$username);
+
+                        $content->set_safe('id',$id);
+
+                        $layout->content = Response::forge($content);
+
+                        return $layout;
+
+                }
+
+                //END TRY
+
+                $layout->content = Response::forge($content);
+
+                return $layout;
         }
 	
 //		ABOUT SECTION		//
-	public function action_about()
+/*	public function action_about()
         {
                 $layout = View::forge('sc/layoutfull');
 
@@ -81,6 +219,44 @@ class Controller_SC extends Controller
                 $scs = SC::getAll();
 
                 $content->set_safe('scs', $scs);
+
+                $layout->content = Response::forge($content);
+
+                return $layout;
+        }*/
+
+                public function action_about()
+        {
+                $layout = View::forge('sc/layoutfull');
+
+                $content = View::forge('sc/about');
+
+
+                // TRY
+                $session = Session::instance();
+
+                $username = $session->get('username');
+
+                $id = $session->get('userid');
+
+                $scs = SC::getAll();
+
+                $content->set_safe('scs', $scs);
+
+                if(isset($username) && isset($id))
+                {
+
+                        $content->set_safe('username',$username);
+
+                        $content->set_safe('id',$id);
+
+                        $layout->content = Response::forge($content);
+
+                        return $layout;
+
+                }
+
+                //END TRY
 
                 $layout->content = Response::forge($content);
 
@@ -110,7 +286,7 @@ class Controller_SC extends Controller
 
 		$status = 'success';
 
-                $content = View::forge('sc/login');
+                $content = View::forge('sc/login');;
 
                 $scs = SC::getAll();
 
@@ -126,6 +302,7 @@ class Controller_SC extends Controller
 //		CHECKER				//
         public function action_checkLogin()
         {
+		$layout = View::forge('sc/layoutfull');
 
                 $username = Input::post('username');
 
@@ -140,18 +317,30 @@ class Controller_SC extends Controller
 
                         Session::set('userid', 12345);
 
-                        $content = View::forge('sc/success');
+                        $content = View::forge('sc/index');
 
-                        return $content;
+			$scs = SC::getAll();
+
+	                $content->set_safe('scs', $scs);
+
+			$layout->content = Response::forge($content);
+
+                        return $layout;
                 }
                 else
                 {
 
-                        $content = View::forge('sc/login');
+			$content = View::forge('sc/login');
+
+			$scs = SC::getAll();
+
+                        $content->set_safe('scs', $scs);
 
                         $content->set_safe('status','error');
 
-                        return $content;
+			$layout->content = Response::forge($content);
+
+                        return $layout;
                 }
 
         }
