@@ -3,11 +3,16 @@
 <p>
 
 This attraction is designed for aliens by humans.
+<br><br>
 It is shaped like a flying saucer with a smaller flying saucer on top.
 It is falling apart but it's caretaker is committed to keeping it open.
+<br>
 It welcomes visiters from all corners of the universe (including humans).
+<br><br>
 The point of this place is to create an environment that aliens would feel comfortable in,
-not so much for humans. It's covered in wires and gadgets from ceiling to floor. </p>
+not so much for humans. It's covered in wires and gadgets from ceiling to floor. 
+<br><br>Despite it's haggard appearance
+the novelty and fun of visiting this attraction won't be lost on anyone who comes to visit.</p>
 	<br>
 <a href="https://www.roadsideamerica.com/story/10911"> Source </a>
 </div>
