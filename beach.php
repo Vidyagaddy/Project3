@@ -43,15 +43,40 @@ Murrells Inlet MarshWalk</p>
 </div>
 <div class = "comments">
 <?php
-	if (isset($_POST['op'])) {
-		$content  = $_POST['content'];
-		$name  = $_POST['name'];
-			echo "<h2 align=\"center\">Your Comment Has Been Posted</h2>\n";
-			
-			echo "<blockquote> \n $name : $content \n </blockquote>\n";
-		
-	
-	}
+        $errors = "";
+        if (isset($_POST['op'])) {
+                if($_POST['name'] != ""){
+                        $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+                        if($_POST['name'] == ""){
+                                $errors .= 'Please enter a valid name.<br/><br/>';
+                        }
+                }
+                else {
+                        $errors .= 'Please enter your name.<br/>';
+                }
+
+
+                if($_POST['content'] != ""){
+                        $content = filter_var($_POST['content'], FILTER_SANITIZE_STRING);
+                        if($_POST['name'] == ""){
+                                $errors .= 'Please enter valid content.<br/><br/>';
+                        }
+                }
+                else {
+                        $errors .= 'Please enter your content.<br/>';
+                }
+
+
+                if(!$errors) {
+                        echo "<h2 align=\"center\">Your Comment Has Been Posted</h2>\n";
+
+                        echo "<blockquote> \n $name : $content \n </blockquote>\n";
+                } else {
+                        echo '<div style="color: red">' . $errors . '<br/></div>';
+                }
+
+        }
+
         else if(!isset($username)){
                 //do nothing
         }
