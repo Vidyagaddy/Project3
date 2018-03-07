@@ -17,8 +17,8 @@ Be careful Western Coastal areas tend to have high winds!
 </div>
 <div class = "comments">
 <?php
-if(session_start()){
-	if (isset($_POST['op'])) {
+	//if (isset($_POST['op'])) {
+	if(isset($_POST) && !empty($_POST)){
 		$content  = $_POST['content'];
 		$name  = $_POST['name'];
 			echo "<h2 align=\"center\">Your Comment Has Been Posted</h2>\n";
@@ -27,6 +27,9 @@ if(session_start()){
 		
 	
 	}
+        else if(!isset($username)){
+                //do nothing
+        }
 	else {
 	?>
         <h2 align="center">We'd Love to Hear From You</h2>
@@ -38,7 +41,6 @@ if(session_start()){
         <input type="submit" value="Send">
         </form>
 <?php
-	}
 	}
 	?>
 
