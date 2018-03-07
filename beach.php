@@ -1,4 +1,3 @@
-
 <div class="body">
 <h1>Myrtle Beach</h1>
 <p>What better way to spend your time than to go out to the beach? Myrtle Beach has a lot to offer between its vast size (Over 60 miles of beach!) and its many attractions! In fact, there’s something for everyone! Check out some of the activities below:</p>
@@ -44,7 +43,6 @@ Murrells Inlet MarshWalk</p>
 </div>
 <div class = "comments">
 <?php
-if(session_start()){
 	if (isset($_POST['op'])) {
 		$content  = $_POST['content'];
 		$name  = $_POST['name'];
@@ -54,6 +52,9 @@ if(session_start()){
 		
 	
 	}
+        else if(!isset($username)){
+                //do nothing
+        }
 	else {
 	?>
         <h2 align="center">We'd Love to Hear From You</h2>
@@ -66,9 +67,7 @@ if(session_start()){
         </form>
 <?php
 	}
-	}
 	?>
 
 <br /><br />
 </div>
-
