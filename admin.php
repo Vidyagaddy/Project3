@@ -9,20 +9,19 @@
      <input type="hidden" value="done" name="op">
      <input type="submit" value="Send">
    </form>
+   <?php if(isset($_POST['op'])){
+        echo 'Attraction Successfully Added to Database';
+	}?>
    
-   <h3> Add Attraction to Site </h3>
-
-            <span class="floatRight">
-            <?php 
-            foreach($attrs as $attr){
-            	?><a href="<?=Uri::create('index.php/sc/view'); ?>"><?php $attr -> title ?></a>
-        	<?php } ?>
-        </h2>
-
-
-      
     <h3> Remove Attraction from Site </h3>
         <span class="floatRight">
-		<a href="<?=Uri::create('demo/delete/'.$attr->attrID); ?>"
-		   onclick="return confirm('Are you sure you want to delete this?');">&#x1f5d1; Delete</a>
+        <form method="post" action="admin.php">
+      <input type="text" name="name" placeholder="Attraction Name"/>
+     <br>
+     <input type="hidden" value="done" name="op2">
+     <input type="submit" value="Remove Attraction">
+   </form>
 	</span>
+	<?php if(isset($_POST['op2'])){
+        echo 'Attraction Successfully Removed';
+	}?>
