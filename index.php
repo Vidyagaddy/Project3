@@ -1,7 +1,8 @@
 
 <h2> Welcome </h2>
 <div class="body">
-        <p>All important South Carolina attractions found here: </p>
+        <p>All important attractions found here: </p>
+        <?=print_r(DB::quote_table('attraction'));?>
         <div id=attractions>
         <span style ="margin-left: 50%">
 		<a href="<?=Uri::create('index.php/sc/island'); ?>">
