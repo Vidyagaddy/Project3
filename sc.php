@@ -21,8 +21,6 @@ class Controller_SC extends Controller
 		$layout->content = Response::forge($content);
 		return $layout;
 	}
-
-
 	public function get_admin()
 	{
         $layout = View::forge('sc/layoutfull');
@@ -37,7 +35,6 @@ class Controller_SC extends Controller
         
         $content->set_safe('attrs', $attrs);
 		$layout->content = Response::forge($content);
-
 		return $layout;
 	}
 	public function post_admin(){
@@ -89,9 +86,46 @@ class Controller_SC extends Controller
 	public function post_view(){
         
 	}
+    public function get_brochure()
+    {
+        //load the layout
+        $layout = View::forge('sc/layoutfull');
+    
+        //load the view
+        $content = View::forge('sc/brochure');
+   
+        $session = Session::instance();
+        $username = $session->get('username');
+        $id = $session->get('userid');
+        
+        //forge inner view
+        $layout->content = Response::forge($content);
+
+        return $layout;
+    }
+
+    public function post_brochure()
+    {
+        
+     if(isset($_POST['submit'])){
+         $to = $_POST['email']; 
+         $from = "zach.rule24@gmail.com"; 
+         $subject = "Brochure Order";
+         $subject2 = "Admin Copy of Brochure Order";
+         $message = "This email is to confirm your submitted order you placed for brochures. Thank you for your order. ";
+         $message2 = "Here is an admin copy of an order made by | " . $to .  " | This is what was said in the order: " .$message;
+         $headers = "From:" . $from;
+         $headers2 = "From:" . $to;
+         mail($to,$subject,$message,$headers);
+         mail($from,$subject2,$message2,$headers2);
+         mail("Aaron.Pereira@colostate.edu", $subject2, $message2, $headers2);
+         mail("ct310@cs.colostate.edu", $subject2, $message2, $headers2);
+         header('Location: brochure.php');
+         echo "Thanks taking a brochure";
+    }        
+    }
 	/*
 //		BEACH ATTRACTION	//
-
                 public function action_beach()
         {
                 $layout = View::forge('sc/layoutfull');
@@ -114,7 +148,6 @@ class Controller_SC extends Controller
                 return $layout;
         }
 //		ISLAND ATTRACTION	//
-
                 public function action_island()
         {
                 $layout = View::forge('sc/layoutfull');
@@ -138,7 +171,6 @@ class Controller_SC extends Controller
                 return $layout;
         }
 //		UFO ATTRACTION		//
-
 	        public function action_ufo()
         {
                 $layout = View::forge('sc/layoutfull');
@@ -162,8 +194,7 @@ class Controller_SC extends Controller
         }
 	*/
 //		ABOUT SECTION		//
-
-        public function action_about()
+    public function action_about()
         {
                 $layout = View::forge('sc/layoutfull');
                 $content = View::forge('sc/about');
@@ -183,12 +214,12 @@ class Controller_SC extends Controller
         return $layout;
     }
 //		CHECKER				//
-        public function action_checkLogin()
+    public function action_checkLogin()
         {
         $layout = View::forge('sc/layoutfull');
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $logins = Login::find('all');
+        $logins = login::find('all');
         $content->set('logins',$logins);
         foreach($logins as $login){
         
