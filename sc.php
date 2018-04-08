@@ -2,36 +2,9 @@
 
 namespace Model;
 
-class SC
-{
-	const FILENAME = "sc.model";
+class SC{
 
-	private $field_values = array();
-
-	private $isStoredRecord = false;
-
-	public function __construct($id = null)
-	{
-		if($id !== null)
-		{
-			if(is_array($id))
-			{
-				$this->field_values = $id;
-				$this->isStoredRecord = true;
-			}
-			elseif(file_exists(self::FILENAME))
-			{
-				$data = unserialize(file_get_contents(self::FILENAME));
-				if(isset($data[$id]))
-				{
-					$this->field_values = $data[$id];
-					$this->isStoredRecord = true;
-				}
-			}
-		}
-	}
-
-	public function __get($name)
+	/*public function __get($name)
 	{
 		return $this->field_values[$name];
 	}
@@ -71,7 +44,7 @@ class SC
 		}
 		return $return;
 	}
-
+/*
 	public function delete()
 	{
 		$data = array();
@@ -88,5 +61,5 @@ class SC
 	public function __toString()
 	{
 		return $this->id . '-' . $this->name;
-	}
+	}*/
 }
