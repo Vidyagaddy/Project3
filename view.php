@@ -1,17 +1,20 @@
 <h2>
 	<a href="<?=Uri::create('index.php/sc/index'); ?>">Home</a>
+	
 	<br>
 	<br>
 	<br>
-	<?= $attr -> title; ?>
+	
+	<?= $attr['title']; ?>
 	
 </h2>
 <div class="h2Content">
 	<h5> Description </h5>
-	<?= $attr -> description; ?>
+	<?= $attr['description']; ?>
 	<br>
 	<br>
-	<?= $attr -> image; ?>
+	<?php echo Asset::img($attr['image'],array("width" => "300px"));?>
+
 	<br>
 	
 	
