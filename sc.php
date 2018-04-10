@@ -51,7 +51,17 @@ class Controller_SC extends Controller
 		if(isset($_POST['op'])){
             $title = $_POST['name'];
             $desc = $_POST['description'];
-            $image = $_POST['image'];
+            $image = Arr::pluck(upload::instance(),'name')[0];
+            $config = array(
+                'path' => DOCROOT.'assets/img',
+                'randomize' => true,
+                'max_size' => 1000000,
+                'ext_whitelist' => array('img','jpg','jpeg','gif','png'),
+                );
+            Upload::process($config);
+            if(Upload::is_valid()){
+                Upload::save();
+            }
             
             Attractions::saveAttraction($title, $desc, $image);
             Response::redirect('index.php/sc/admin');
@@ -122,8 +132,10 @@ class Controller_SC extends Controller
 		
         $logins = Login::getLogins();
         $content -> set_safe('logins',$logins);
+        
 		$session = Session::instance();
         $username = $session->get('username');
+        $content -> set_safe('username',$username);;
                 
                 
 		$attrs = Attractions::getAttractions();
@@ -148,6 +160,7 @@ class Controller_SC extends Controller
 		
 		$session = Session::instance();
         $username = $session->get('username');
+        $content -> set_safe('username',$username);
         $logins = Login::getLogins();
         $content -> set_safe('logins',$logins);
         
