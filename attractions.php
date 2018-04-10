@@ -61,5 +61,38 @@ class Attractions extends \Orm\Model{
 
 		$query->execute();
 	}
+    public static function removeAttraction($title){
+        $query = \DB::delete('attractions');
+        $query ->where('title','=',$title);
+        $query ->execute();
+    }
+    public static function storeComment($name, $content, $attrID){
+        $query = \DB::insert('comments');
 
+		// Set the columns and values
+		$query->set(array(
+			'name' => $name,
+			'content' => $content,
+			'attrID' => $attrID,
+		));
+
+		$query->execute();
+    }
+    public static function getComments(){
+        $query = \DB::select('*')->from('comments')->execute();
+		return $query;
+    }
+    public static function deleteComment($id){
+        $query = \DB::delete('comments');
+        $query ->where('id','=',$id);
+        $query ->execute();
+    }
+    public static function editComment($id, $edit){
+        $query = \DB::update('comments');
+        $query -> set(array(
+            'content' => $edit,
+            ));
+        $query ->where('id', '=',$id);
+        $query ->execute();
+    }
 }
