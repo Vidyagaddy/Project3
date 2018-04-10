@@ -62,7 +62,13 @@
                 }
         }
         else if(!isset($username)){
-                //do nothing
+        ?><h2 align="center">We'd Love to Hear From You</h2>
+        <?php
+            foreach($comments as $comment){
+            if($comment['attrID'] == $attr['attrID']){
+                echo "<blockquote> \n ".$comment['id'].". ".$comment['name']." : ".$comment['content']." \n </blockquote>\n";
+            }
+        }
         }
 	else {
 	?>
@@ -80,7 +86,7 @@
         <input type="submit" value="Save">
         </form>
         <?php foreach($logins as $login){
-            if($login['id'] == 1){ ?>
+            if($login['username'] == $username && $login['id'] == 1){ ?>
                 <p>Edit or Delete Comment</p>
         <form method="post" action=<?php $attr['attrID']?>>
         Comment ID:    <input type="text" name="id"    size="30"><br/>
