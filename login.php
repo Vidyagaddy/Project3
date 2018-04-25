@@ -41,4 +41,49 @@ class Login extends \Orm\Model{
         $query -> set('hash', md5($password));
         $query -> execute();
         }
-    }
+    
+    public function __toString()
+	{
+		return $this->username;
+	}
+	public static function getLogins(){
+        $query = \DB::select('*')->from('logins')->execute();
+		return $query;
+	} 
+	public static function updateStatus($test){
+        if($test == 1){
+            $query = \DB::update('gaddvi');
+            $query -> table('migStatus');
+            $query -> value('status','run');
+            $query -> where('version',$test);
+            
+            $query -> execute();
+        }
+        else if($test == 2){
+            $query = \DB::update('gaddvi');
+            $query -> table('migStatus');
+            $query -> where('version','!=',3);
+            $query -> value('status','run');
+            $query -> execute();
+        }
+        else if($test == 3){
+            $query = \DB::update('gaddvi');
+            $query -> table('migStatus');
+            $query -> where('version','!=',-1);
+            $query -> value('status','run');
+            $query -> execute();
+        }
+        else if($test == 0){
+            $query = \DB::update('gaddvi');
+            $query -> table('migStatus');
+            $query -> where('version', '!=',-1);
+            $query -> value('status','not run');
+            $query -> execute();
+        }
+	}
+	public static function getStatus(){
+        $query = \DB::select('*')->from('migStatus')->execute();
+        return $query;
+	}
+	
+	}
