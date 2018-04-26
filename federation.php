@@ -20,7 +20,15 @@ class Controller_Federation extends Controller
         $content = View::forge('federation/allstatus');
 		return $content;
 	}
-	public function action_listing(){}
+	public function action_listing(){
+        $attrs = Attractions::getAttractions();
+        $attrsArray = array();
+        foreach($attrs as $attr){
+            $attrArray = array('id' => $attr['attrID'], 'name' => $attr['title'], 'state' => $attr['state']);
+            array_push($attrsArray,$attrArray);
+        }
+        return Format::forge($attrsArray)->to_json();
+	}
 	
 	public function action_attraction($attrID){}
 	
