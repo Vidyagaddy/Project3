@@ -6,7 +6,7 @@ if (isset($_POST['op'])) {
 	$email  = $_POST['email'];
 	
 	error_reporting(0);
-	if($username == 'vgaddy' || $username == 'zach' || $username == 'CT310' || $username == 'Bob'){
+	if($username == 'gaddvi' || $username == 'nbarouxi' || $username == 'ct310' || $username == 'bsay' || $username == 'aaronper'|| $username == 'aaronadmin'){
         // need to get decrypted password somehow
         
         if(mail($email, 'Password Recovery For '.$username, 'Here is your password reset link: '.Uri::create('index.php/sc/resetPW')
