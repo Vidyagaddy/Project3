@@ -4,20 +4,19 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-
     $.ajax("/~ct310/yr2018sp/master.json", {
         success: function(data){
          
             $.each(data,function(e){
-                $.ajax("http://www.cs.colostate.edu/~"+data[e].eid+"/ct310/index.php/federation/status", {
-                    success: function(status,textStatus){
+                $.ajax("/~"+data[e].eid+"/ct310/index.php/federation/status", {
+                    success: function(status,textStatus,xhr){
                         var rt = "";
                         var table = document.getElementById('allstatus');
                         var j = table.rows.length;
                         rt = "<tr>";
                         rt += "<td>"+data[e].nameShort +"</td>";
-                        rt += "<td>"+data[e].nameLong+"</td>";
-                        if(textStatus != 'success'){
+                        rt += "<td>"+data[e].nameLong+"</td>";                        
+                        if(xhr.status != 200){
                             rt += "<td style= 'color: yellow;'>"+unknown+"</td>";
                         }
                         if(typeof(status) == 'string'){
@@ -44,7 +43,7 @@ $(document).ready(function(){
                         var rr = table.insertRow(j);
                         rr.innerHTML = rt; 
                     }
-                },{
+                ,
                 error: function(){
                     var rt = "";
                         var table = document.getElementById('allstatus');
@@ -52,7 +51,7 @@ $(document).ready(function(){
                         rt = "<tr>";
                         rt += "<td>"+data[e].nameShort +"</td>";
                         rt += "<td>"+data[e].nameLong+"</td>";
-                        rt += "<td style= 'color: yellow;'>"+unknown+"</td>";
+                        rt += "<td style= 'color: yellow;'>unknown+</td>";
                         rt += "</tr>";
                         var rr = table.insertRow(j);
                         rr.innerHTML = rt;
@@ -131,3 +130,4 @@ function addRow(data,status){
 </table>
 </body>
 </html>
+
